@@ -1,8 +1,16 @@
 [package]
 name = "solana-program-macros"
+description = "Essential macros for Solana programs."
+license = "Apache-2.0"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+default = ["legacy"]
+legacy = ["dep:solana-program"]
+
 [dependencies]
+cfg-if = "1.0.0"
+solana-program = { version = "1.18", optional = true }
